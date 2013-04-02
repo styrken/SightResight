@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "AGImagePickerController.h"
 
 @interface ViewController ()
 
@@ -44,6 +43,46 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)selectImage:(id)sender
+{
+
+}
+
+- (IBAction)selectImages:(id)sender
+{
+    AGImagePickerController *imagePickerController = [[AGImagePickerController alloc] initWithFailureBlock:^(NSError *error) {
+        
+        if (error == nil)
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        else
+        {
+            NSLog(@"Error: %@", error);
+            
+            // Wait for the view controller to show first and hide it after that
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
+        }
+        
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+        
+    } andSuccessBlock:^(NSArray *info) {
+        NSLog(@"Info: %@", info);
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    }];
+    
+    imagePickerController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:imagePickerController animated:YES completion:^{
+       
+    }];    
 }
 
 @end
