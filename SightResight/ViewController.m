@@ -8,9 +8,10 @@
 
 #import "ViewController.h"
 #import "AGImagePickerController.h"
+#import "MultipleImagesViewController.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) MultipleImagesViewController *imageViewer;
 @end
 
 @implementation ViewController
@@ -77,6 +78,12 @@
         [self dismissViewControllerAnimated:YES completion:nil];
         
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+        
+        self.imageViewer = [[MultipleImagesViewController alloc] initWithImageAssets:info];
+        [self.view addSubview:self.imageViewer.view];
+        
+        self.imageViewer.view.frame = self.view.bounds;
+        
     }];
     
     imagePickerController.modalPresentationStyle = UIModalPresentationFormSheet;
