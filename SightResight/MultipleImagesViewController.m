@@ -50,7 +50,7 @@
 {
     ALAsset *asset = [self.imageAssets objectAtIndex:index];
     
-    NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"temp.png"];
+    NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"temp%i.png", index]];
     
     UIImage *currentImage = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage]];
     NSData *currentImageData = UIImagePNGRepresentation(currentImage);
@@ -69,7 +69,13 @@
 {
     ALAsset *asset = [self.imageAssets objectAtIndex:index];
     
-    return [asset.defaultRepresentation.url path];
+    NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"_temp%i.png", index]];
+    
+    UIImage *currentImage = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage]];
+    NSData *currentImageData = UIImagePNGRepresentation(currentImage);
+    [currentImageData writeToFile:filePath atomically:YES];
+    
+    return filePath;
 }
 
 @end
