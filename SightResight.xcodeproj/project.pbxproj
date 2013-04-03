@@ -75,7 +75,6 @@
 		3B3C2D4E170B49A100B8D3F8 /* NIPhotoAlbumScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2CFD170B49A100B8D3F8 /* NIPhotoAlbumScrollView.m */; };
 		3B3C2D4F170B49A100B8D3F8 /* NIPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2D01170B49A100B8D3F8 /* NIPhotoScrollView.m */; };
 		3B3C2D50170B49A100B8D3F8 /* NIPhotoScrubberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2D05170B49A100B8D3F8 /* NIPhotoScrubberView.m */; };
-		3B3C2D51170B49A100B8D3F8 /* NIToolbarPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2D07170B49A100B8D3F8 /* NIToolbarPhotoViewController.m */; };
 		3B3C2D59170B4A1D00B8D3F8 /* CaptionedPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2D56170B4A1D00B8D3F8 /* CaptionedPhotoView.m */; };
 		3B3C2D5A170B4A1D00B8D3F8 /* NetworkPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2D58170B4A1D00B8D3F8 /* NetworkPhotoAlbumViewController.m */; };
 		3B3C2D5B170CAB3E00B8D3F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B314747170ADF2800D8F545 /* ViewController.xib */; };
@@ -92,6 +91,7 @@
 		3B9A9072170CB1DF0073A7A5 /* sightresight144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9071170CB1DF0073A7A5 /* sightresight144.png */; };
 		3B9A9074170CB1E60073A7A5 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9073170CB1E60073A7A5 /* Default-Landscape~ipad.png */; };
 		3B9A9076170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9075170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png */; };
+		3B9A9078170CB6A30073A7A5 /* NIToolbarPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A9077170CB6A30073A7A5 /* NIToolbarPhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -269,6 +269,7 @@
 		3B9A9071170CB1DF0073A7A5 /* sightresight144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight144.png; sourceTree = "<group>"; };
 		3B9A9073170CB1E60073A7A5 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		3B9A9075170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		3B9A9077170CB6A30073A7A5 /* NIToolbarPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NIToolbarPhotoViewController.m; path = submodules/NIToolbarPhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +291,7 @@
 		3B314720170ADF2700D8F545 = {
 			isa = PBXGroup;
 			children = (
+				3B9A9077170CB6A30073A7A5 /* NIToolbarPhotoViewController.m */,
 				3B9A9075170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png */,
 				3B9A9073170CB1E60073A7A5 /* Default-Landscape~ipad.png */,
 				3B9A9071170CB1DF0073A7A5 /* sightresight144.png */,
@@ -780,6 +782,7 @@
 				3B3C2D12170B49A100B8D3F8 /* NIFoundationMethods.m in Sources */,
 				3B3C2D13170B49A100B8D3F8 /* NIInMemoryCache.m in Sources */,
 				3B3C2D14170B49A100B8D3F8 /* NINavigationAppearance.m in Sources */,
+				3B9A9078170CB6A30073A7A5 /* NIToolbarPhotoViewController.m in Sources */,
 				3B3C2D15170B49A100B8D3F8 /* NINetworkActivity.m in Sources */,
 				3B3C2D16170B49A100B8D3F8 /* NINonEmptyCollectionTesting.m in Sources */,
 				3B3C2D17170B49A100B8D3F8 /* NINonRetainingCollections.m in Sources */,
@@ -812,7 +815,6 @@
 				3B3C2D4E170B49A100B8D3F8 /* NIPhotoAlbumScrollView.m in Sources */,
 				3B3C2D4F170B49A100B8D3F8 /* NIPhotoScrollView.m in Sources */,
 				3B3C2D50170B49A100B8D3F8 /* NIPhotoScrubberView.m in Sources */,
-				3B3C2D51170B49A100B8D3F8 /* NIToolbarPhotoViewController.m in Sources */,
 				3B3C2D59170B4A1D00B8D3F8 /* CaptionedPhotoView.m in Sources */,
 				3B3C2D5A170B4A1D00B8D3F8 /* NetworkPhotoAlbumViewController.m in Sources */,
 			);
