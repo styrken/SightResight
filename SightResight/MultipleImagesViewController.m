@@ -23,6 +23,7 @@
     if(self)
     {
         self.imageAssets = images;
+        self.scrubberIsEnabled = NO;
         self.hidesChromeWhenScrolling = NO;
     }
     
@@ -59,23 +60,21 @@
     return filePath;
 }
 
+- (NSString*) imageAlbumView:(PTImageAlbumView *)imageAlbumView sourceForThumbnailImageAtIndex:(NSInteger)index
+{
+    return nil;
+}
+
 - (CGSize)imageAlbumView:(PTImageAlbumView *)imageAlbumView sizeForImageAtIndex:(NSInteger)index
 {
     ALAsset *asset = [self.imageAssets objectAtIndex:index];
     return asset.defaultRepresentation.dimensions;
 }
 
-- (NSString *)imageAlbumView:(PTImageAlbumView *)imageAlbumView sourceForThumbnailImageAtIndex:(NSInteger)index
+- (NSString *)imageAlbumView:(PTImageAlbumView *)imageAlbumView captionForImageAtIndex:(NSInteger)index
 {
     ALAsset *asset = [self.imageAssets objectAtIndex:index];
-    
-    NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"_temp%i.png", index]];
-    
-    UIImage *currentImage = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage]];
-    NSData *currentImageData = UIImagePNGRepresentation(currentImage);
-    [currentImageData writeToFile:filePath atomically:YES];
-    
-    return filePath;
+    return asset.defaultRepresentation.filename;
 }
 
 @end

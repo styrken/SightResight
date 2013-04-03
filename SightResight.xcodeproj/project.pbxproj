@@ -78,6 +78,20 @@
 		3B3C2D51170B49A100B8D3F8 /* NIToolbarPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2D07170B49A100B8D3F8 /* NIToolbarPhotoViewController.m */; };
 		3B3C2D59170B4A1D00B8D3F8 /* CaptionedPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2D56170B4A1D00B8D3F8 /* CaptionedPhotoView.m */; };
 		3B3C2D5A170B4A1D00B8D3F8 /* NetworkPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2D58170B4A1D00B8D3F8 /* NetworkPhotoAlbumViewController.m */; };
+		3B3C2D5B170CAB3E00B8D3F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B314747170ADF2800D8F545 /* ViewController.xib */; };
+		3B9A9066170CB1C10073A7A5 /* sightresight1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A905C170CB1C10073A7A5 /* sightresight1024.png */; };
+		3B9A9067170CB1C10073A7A5 /* sightresight144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A905D170CB1C10073A7A5 /* sightresight144.png */; };
+		3B9A9068170CB1C10073A7A5 /* sightresight29.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A905E170CB1C10073A7A5 /* sightresight29.png */; };
+		3B9A9069170CB1C10073A7A5 /* sightresight50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A905F170CB1C10073A7A5 /* sightresight50.png */; };
+		3B9A906A170CB1C10073A7A5 /* sightresight512.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9060170CB1C10073A7A5 /* sightresight512.png */; };
+		3B9A906B170CB1C10073A7A5 /* sightresight58.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9061170CB1C10073A7A5 /* sightresight58.png */; };
+		3B9A906C170CB1C10073A7A5 /* sightresight72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9062170CB1C10073A7A5 /* sightresight72.png */; };
+		3B9A906D170CB1C10073A7A5 /* sightresightSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9064170CB1C10073A7A5 /* sightresightSplash.png */; };
+		3B9A906E170CB1C10073A7A5 /* sightresightSplash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9065170CB1C10073A7A5 /* sightresightSplash@2x.png */; };
+		3B9A9070170CB1D70073A7A5 /* sightresight72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A906F170CB1D70073A7A5 /* sightresight72.png */; };
+		3B9A9072170CB1DF0073A7A5 /* sightresight144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9071170CB1DF0073A7A5 /* sightresight144.png */; };
+		3B9A9074170CB1E60073A7A5 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9073170CB1E60073A7A5 /* Default-Landscape~ipad.png */; };
+		3B9A9076170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9075170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,6 +256,19 @@
 		3B3C2D56170B4A1D00B8D3F8 /* CaptionedPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptionedPhotoView.m; path = submodules/PTImageAlbumView/Libraries/nimbus/examples/photos/NetworkPhotoAlbums/src/CaptionedPhotoView.m; sourceTree = SOURCE_ROOT; };
 		3B3C2D57170B4A1D00B8D3F8 /* NetworkPhotoAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkPhotoAlbumViewController.h; path = submodules/PTImageAlbumView/Libraries/nimbus/examples/photos/NetworkPhotoAlbums/src/NetworkPhotoAlbumViewController.h; sourceTree = SOURCE_ROOT; };
 		3B3C2D58170B4A1D00B8D3F8 /* NetworkPhotoAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkPhotoAlbumViewController.m; path = submodules/PTImageAlbumView/Libraries/nimbus/examples/photos/NetworkPhotoAlbums/src/NetworkPhotoAlbumViewController.m; sourceTree = SOURCE_ROOT; };
+		3B9A905C170CB1C10073A7A5 /* sightresight1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight1024.png; sourceTree = "<group>"; };
+		3B9A905D170CB1C10073A7A5 /* sightresight144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight144.png; sourceTree = "<group>"; };
+		3B9A905E170CB1C10073A7A5 /* sightresight29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight29.png; sourceTree = "<group>"; };
+		3B9A905F170CB1C10073A7A5 /* sightresight50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight50.png; sourceTree = "<group>"; };
+		3B9A9060170CB1C10073A7A5 /* sightresight512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight512.png; sourceTree = "<group>"; };
+		3B9A9061170CB1C10073A7A5 /* sightresight58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight58.png; sourceTree = "<group>"; };
+		3B9A9062170CB1C10073A7A5 /* sightresight72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight72.png; sourceTree = "<group>"; };
+		3B9A9064170CB1C10073A7A5 /* sightresightSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresightSplash.png; sourceTree = "<group>"; };
+		3B9A9065170CB1C10073A7A5 /* sightresightSplash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sightresightSplash@2x.png"; sourceTree = "<group>"; };
+		3B9A906F170CB1D70073A7A5 /* sightresight72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight72.png; sourceTree = "<group>"; };
+		3B9A9071170CB1DF0073A7A5 /* sightresight144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight144.png; sourceTree = "<group>"; };
+		3B9A9073170CB1E60073A7A5 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		3B9A9075170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +290,10 @@
 		3B314720170ADF2700D8F545 = {
 			isa = PBXGroup;
 			children = (
+				3B9A9075170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png */,
+				3B9A9073170CB1E60073A7A5 /* Default-Landscape~ipad.png */,
+				3B9A9071170CB1DF0073A7A5 /* sightresight144.png */,
+				3B9A906F170CB1D70073A7A5 /* sightresight72.png */,
 				3B314732170ADF2700D8F545 /* SightResight */,
 				3B31472B170ADF2700D8F545 /* Frameworks */,
 				3B31472A170ADF2700D8F545 /* Products */,
@@ -294,12 +325,13 @@
 		3B314732170ADF2700D8F545 /* SightResight */ = {
 			isa = PBXGroup;
 			children = (
+				3B9A905A170CB1C10073A7A5 /* gfx */,
+				3B314733170ADF2700D8F545 /* Supporting Files */,
 				3B31473B170ADF2700D8F545 /* AppDelegate.h */,
 				3B31473C170ADF2800D8F545 /* AppDelegate.m */,
 				3B314744170ADF2800D8F545 /* ViewController.h */,
 				3B314745170ADF2800D8F545 /* ViewController.m */,
 				3B314747170ADF2800D8F545 /* ViewController.xib */,
-				3B314733170ADF2700D8F545 /* Supporting Files */,
 				3B3C2362170B29AE00B8D3F8 /* MultipleImagesViewController.h */,
 				3B3C2363170B29AE00B8D3F8 /* MultipleImagesViewController.m */,
 			);
@@ -610,6 +642,38 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		3B9A905A170CB1C10073A7A5 /* gfx */ = {
+			isa = PBXGroup;
+			children = (
+				3B9A905B170CB1C10073A7A5 /* icons */,
+				3B9A9063170CB1C10073A7A5 /* splash */,
+			);
+			path = gfx;
+			sourceTree = "<group>";
+		};
+		3B9A905B170CB1C10073A7A5 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				3B9A905C170CB1C10073A7A5 /* sightresight1024.png */,
+				3B9A905D170CB1C10073A7A5 /* sightresight144.png */,
+				3B9A905E170CB1C10073A7A5 /* sightresight29.png */,
+				3B9A905F170CB1C10073A7A5 /* sightresight50.png */,
+				3B9A9060170CB1C10073A7A5 /* sightresight512.png */,
+				3B9A9061170CB1C10073A7A5 /* sightresight58.png */,
+				3B9A9062170CB1C10073A7A5 /* sightresight72.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		3B9A9063170CB1C10073A7A5 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				3B9A9064170CB1C10073A7A5 /* sightresightSplash.png */,
+				3B9A9065170CB1C10073A7A5 /* sightresightSplash@2x.png */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -662,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B314737170ADF2700D8F545 /* InfoPlist.strings in Resources */,
+				3B3C2D5B170CAB3E00B8D3F8 /* ViewController.xib in Resources */,
 				3B3C2352170B270100B8D3F8 /* AGImagePickerController.bundle in Resources */,
 				3B3C2D0B170B49A100B8D3F8 /* deps in Resources */,
 				3B3C2D30170B49A100B8D3F8 /* deps in Resources */,
@@ -670,6 +735,19 @@
 				3B3C2D47170B49A100B8D3F8 /* deps in Resources */,
 				3B3C2D4C170B49A100B8D3F8 /* deps in Resources */,
 				3B3C2D4D170B49A100B8D3F8 /* NimbusPhotos.bundle in Resources */,
+				3B9A9066170CB1C10073A7A5 /* sightresight1024.png in Resources */,
+				3B9A9067170CB1C10073A7A5 /* sightresight144.png in Resources */,
+				3B9A9068170CB1C10073A7A5 /* sightresight29.png in Resources */,
+				3B9A9069170CB1C10073A7A5 /* sightresight50.png in Resources */,
+				3B9A906A170CB1C10073A7A5 /* sightresight512.png in Resources */,
+				3B9A906B170CB1C10073A7A5 /* sightresight58.png in Resources */,
+				3B9A906C170CB1C10073A7A5 /* sightresight72.png in Resources */,
+				3B9A906D170CB1C10073A7A5 /* sightresightSplash.png in Resources */,
+				3B9A906E170CB1C10073A7A5 /* sightresightSplash@2x.png in Resources */,
+				3B9A9070170CB1D70073A7A5 /* sightresight72.png in Resources */,
+				3B9A9072170CB1DF0073A7A5 /* sightresight144.png in Resources */,
+				3B9A9074170CB1E60073A7A5 /* Default-Landscape~ipad.png in Resources */,
+				3B9A9076170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
