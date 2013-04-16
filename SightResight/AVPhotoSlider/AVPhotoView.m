@@ -5,6 +5,7 @@
 //
 
 
+#import <QuartzCore/QuartzCore.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "AVPhotoView.h"
 
@@ -24,14 +25,17 @@
     {
         self.isLoaded = NO;
         self.isAborted = NO;
+        self.caption = nil;
         self.imageView = nil;
         self.delegate = self;
 
+        // Spinner
         self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         [self.spinner setHidesWhenStopped:YES];
         self.spinner.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
         [self addSubview:self.spinner];
 
+        // Tap gestures
         UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewDoubleTapped:)];
         doubleTapRecognizer.numberOfTapsRequired = 2;
         doubleTapRecognizer.numberOfTouchesRequired = 1;
@@ -58,44 +62,44 @@
 
         if(self.imagePath.length > 0)
         {
-            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-            dispatch_async(queue, ^{
+            NSURL *url = [NSURL URLWithString:self.imagePath];
+            if ([[url scheme] isEqualToString:@"file"])
+            {
+                dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+                dispatch_async(queue, ^{
 
-                NSURL *url = [NSURL URLWithString:self.imagePath];
-                if ([[url scheme] isEqualToString:@"file"])
-                {
                     UIImage *image = [UIImage imageNamed:self.imagePath];
 
                     if(image)
                         [self setImage:image];
                     else
                         [self displayError];
-                }
-                else if ([[url scheme] isEqualToString:@"assets-library"])
-                {
-                    // Load from assets
-                    ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
-                    [assetslibrary assetForURL:url
-                                   resultBlock:^(ALAsset *asset){
-                                       ALAssetRepresentation *rep = [asset defaultRepresentation];
-                                       CGImageRef iref = [rep fullScreenImage];
-                                       if (iref)
-                                       {
-                                           UIImage *image = [UIImage imageWithCGImage:iref];
-                                           [self setImage:image];
-                                       }
-                                       else
-                                           [self displayError];
+                });
+            }
+            else if ([[url scheme] isEqualToString:@"assets-library"])
+            {
+                // Load from assets
+                ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+                [assetslibrary assetForURL:url
+                               resultBlock:^(ALAsset *asset){
+                                   ALAssetRepresentation *rep = [asset defaultRepresentation];
+                                   CGImageRef iref = [rep fullScreenImage];
+                                   if (iref)
+                                   {
+                                       UIImage *image = [UIImage imageWithCGImage:iref];
+                                       [self setImage:image];
                                    }
-                                  failureBlock:^(NSError *error) {
-                                      [self displayError];
-                                  }];
-                }
-                else
-                {
-                    // Load via NSURLConnection instead
-                }
-            });
+                                   else
+                                       [self displayError];
+                               }
+                              failureBlock:^(NSError *error) {
+                                  [self displayError];
+                              }];
+            }
+            else
+            {
+                // Load via NSURLConnection instead
+            }
         }
         else
         {
