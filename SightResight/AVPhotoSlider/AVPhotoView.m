@@ -6,7 +6,6 @@
 
 
 #import <AssetsLibrary/AssetsLibrary.h>
-#import <CoreGraphics/CoreGraphics.h>
 #import "AVPhotoView.h"
 
 @interface AVPhotoView () <UIScrollViewDelegate>

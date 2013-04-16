@@ -5,7 +5,6 @@
 //
 
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "AVPhotoController.h"
 #import "AVPhotoView.h"
 
@@ -71,9 +70,7 @@
     // Set the total contentsize
     self.contentSize = CGSizeMake((photoWith * self.photoViews.count), photoFrame.size.height);
 
-    NSLog(@"My own size: %@", NSStringFromCGRect(self.frame));
-    NSLog(@"Content size: %@", NSStringFromCGSize(self.contentSize));
-
+    // Bit hacky.. bit it will invoke showing of first page
     [self scrollViewDidEndDecelerating:self];
 }
 
@@ -84,7 +81,6 @@
     CGFloat pageWidth = scrollView.frame.size.width;
     int currentPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     int nextPage = currentPage + 1;
-    int prevPage = currentPage - 1;
 
     // Load current page
     AVPhotoView *currentPhoto = [self.photoViews objectAtIndex:currentPage];
@@ -97,13 +93,22 @@
         [photo loadImage];
     }
 
-    // Unload pages not needed
+    // Calculate page threshold
+    int minPage = currentPage-2;
+    int maxPage = currentPage+2;
+
+    // Unload pages according to threshold to release some memory
     [self.photoViews enumerateObjectsUsingBlock:^(AVPhotoView *obj, NSUInteger idx, BOOL *stop) {
 
-        if(idx != currentPage || idx != nextPage && idx != prevPage)
+        int page = idx;
+
+        if(page > maxPage)
         {
-            //NSLog(@"Unload image");
-            //[obj unloadImage];
+            [obj unloadImage];
+        }
+        else if(page < minPage)
+        {
+            [obj unloadImage];
         }
     }];
 }

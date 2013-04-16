@@ -6,18 +6,14 @@
 //  Copyright (c) 2013 Appværk. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "ViewController.h"
 #import "AGImagePickerController.h"
-#import "MultipleImagesViewController.h"
 #import "AVPhotoController.h"
 
 #define IMAGE_PICKER_TAG_LEFT 1
 #define IMAGE_PICKER_TAG_RIGHT 2
 
 @interface ViewController ()
-@property (nonatomic, strong) MultipleImagesViewController *imageViewer1;
-@property (nonatomic, strong) MultipleImagesViewController *imageViewer2;
 @property (nonatomic, strong) AVPhotoController *photoController1;
 @property (nonatomic, strong) AVPhotoController *photoController2;
 @end

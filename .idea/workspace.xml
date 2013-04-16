@@ -7,7 +7,7 @@
     <file path="/AVPhotoView.h" changelist="baa378b9-3bda-4eb8-816b-955a132629f5" time="1366140374206" ignored="false" />
     <file path="/AVPhotoView.m" changelist="baa378b9-3bda-4eb8-816b-955a132629f5" time="1366142324158" ignored="false" />
     <file path="/AVPhotoController.h" changelist="baa378b9-3bda-4eb8-816b-955a132629f5" time="1366126961862" ignored="false" />
-    <file path="/AVPhotoController.m" changelist="baa378b9-3bda-4eb8-816b-955a132629f5" time="1366141162881" ignored="false" />
+    <file path="/AVPhotoController.m" changelist="baa378b9-3bda-4eb8-816b-955a132629f5" time="1366143661539" ignored="false" />
     <file path="/ViewController.m" changelist="baa378b9-3bda-4eb8-816b-955a132629f5" time="1366134136380" ignored="false" />
     <file path="/AGImagePickerController+Helper.m" changelist="baa378b9-3bda-4eb8-816b-955a132629f5" time="1366139524997" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,30 +29,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AVPhotoView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoView.h">
+      <file leaf-file-name="AVPhotoController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
+            <state line="12" column="40" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultipleImagesViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SightResight/MultipleImagesViewController.m">
+      <file leaf-file-name="AVPhotoView.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="26" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
+            <state line="7" column="39" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AVPhotoController.m" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AVPhotoController.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="0" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.0">
+            <state line="99" column="65" selection-start="2661" selection-end="2661" vertical-scroll-proportion="1.4186046">
               <folding>
-                <element signature="e#112#149#0" expanded="true" />
+                <element signature="e#112#141#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,7 +61,7 @@
       <file leaf-file-name="AGIPCAlbumsController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/submodules/AGImagePicker/AGImagePickerController/AGIPCAlbumsController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="47" selection-start="1159" selection-end="1159" vertical-scroll-proportion="-6.32">
+            <state line="51" column="32" selection-start="1159" selection-end="1159" vertical-scroll-proportion="-6.32">
               <folding>
                 <element signature="e#307#340#0" expanded="true" />
               </folding>
@@ -81,7 +81,7 @@
       <file leaf-file-name="AGImagePickerController+Helper.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/submodules/AGImagePicker/AGImagePickerController/AGImagePickerController+Helper.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="23" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+            <state line="55" column="0" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,17 +96,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AVPhotoView.m" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoView.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="26" selection-start="3903" selection-end="3903" vertical-scroll-proportion="0.27906978">
-              <folding>
-                <element signature="e#112#151#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AGImagePickerController.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/submodules/AGImagePicker/AGImagePickerController/AGImagePickerController.h">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,12 +105,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SightResight/ViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SightResight/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="11" selection-start="2130" selection-end="2130" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#142#179#0" expanded="true" />
+                <element signature="e#142#168#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,12 +136,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.h" />
-        <option value="$PROJECT_DIR$/SightResight/ViewController.m" />
         <option value="$PROJECT_DIR$/submodules/AGImagePicker/AGImagePickerController/AGImagePickerController.m" />
         <option value="$PROJECT_DIR$/submodules/AGImagePicker/AGImagePickerController/AGImagePickerController+Helper.m" />
         <option value="$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoView.h" />
-        <option value="$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.m" />
+        <option value="$PROJECT_DIR$/SightResight/ViewController.m" />
         <option value="$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoView.m" />
+        <option value="$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.m" />
       </list>
     </option>
   </component>
@@ -312,7 +310,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="22" width="2501" height="1418" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12462236" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -322,7 +320,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39954683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32930514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32930514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -399,15 +397,6 @@
     <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoView.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="139" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#112#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SightResight/MultipleImagesViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="14" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -433,26 +422,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/submodules/AGImagePicker/AGImagePickerController/AGImagePickerController+Helper.h">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SightResight/ViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="11" selection-start="2130" selection-end="2130" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#142#179#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -472,7 +445,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/submodules/AGImagePicker/AGImagePickerController/AGIPCAlbumsController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="47" selection-start="1159" selection-end="1159" vertical-scroll-proportion="-6.32">
+        <state line="51" column="32" selection-start="1159" selection-end="1159" vertical-scroll-proportion="-6.32">
           <folding>
             <element signature="e#307#340#0" expanded="true" />
           </folding>
@@ -481,39 +454,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/submodules/AGImagePicker/AGImagePickerController/AGImagePickerController+Helper.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="23" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+        <state line="55" column="0" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SightResight/MultipleImagesViewController.m">
+    <entry file="file://$PROJECT_DIR$/SightResight/ViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="26" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.m">
+    <entry file="file://$PROJECT_DIR$/SightResight/ViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.0">
+        <state line="7" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#112#149#0" expanded="true" />
+            <element signature="e#142#168#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
+        <state line="24" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.41860464">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="26" selection-start="3903" selection-end="3903" vertical-scroll-proportion="0.27906978">
+        <state line="7" column="39" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="40" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SightResight/AVPhotoSlider/AVPhotoController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="65" selection-start="2661" selection-end="2661" vertical-scroll-proportion="1.4186046">
           <folding>
-            <element signature="e#112#151#0" expanded="true" />
+            <element signature="e#112#141#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -19,7 +19,6 @@
 		3B3C2C56170B430300B8D3F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B31473C170ADF2800D8F545 /* AppDelegate.m */; };
 		3B3C2C57170B430600B8D3F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B314738170ADF2700D8F545 /* main.m */; };
 		3B3C2C58170B430800B8D3F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B314745170ADF2800D8F545 /* ViewController.m */; };
-		3B3C2C59170B489800B8D3F8 /* MultipleImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2363170B29AE00B8D3F8 /* MultipleImagesViewController.m */; };
 		3B3C2C5C170B48BE00B8D3F8 /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2343170B270100B8D3F8 /* AGImagePickerController.m */; };
 		3B3C2C5D170B48C600B8D3F8 /* AGIPCAlbumsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2346170B270100B8D3F8 /* AGIPCAlbumsController.m */; };
 		3B3C2C5E170B48CA00B8D3F8 /* AGIPCAssetsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2348170B270100B8D3F8 /* AGIPCAssetsController.m */; };
@@ -136,8 +135,6 @@
 		3B3C234F170B270100B8D3F8 /* ALAsset+AGIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+AGIPC.h"; sourceTree = "<group>"; };
 		3B3C2350170B270100B8D3F8 /* ALAsset+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+AGIPC.m"; sourceTree = "<group>"; };
 		3B3C235A170B27E200B8D3F8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		3B3C2362170B29AE00B8D3F8 /* MultipleImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleImagesViewController.h; sourceTree = "<group>"; };
-		3B3C2363170B29AE00B8D3F8 /* MultipleImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleImagesViewController.m; sourceTree = "<group>"; };
 		3B3C2BCE170B426800B8D3F8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3B3C2C65170B494800B8D3F8 /* PTImageAlbumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTImageAlbumView.h; sourceTree = "<group>"; };
 		3B3C2C66170B494800B8D3F8 /* PTImageAlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTImageAlbumView.m; sourceTree = "<group>"; };
@@ -351,8 +348,6 @@
 				3B314744170ADF2800D8F545 /* ViewController.h */,
 				3B314745170ADF2800D8F545 /* ViewController.m */,
 				3B314747170ADF2800D8F545 /* ViewController.xib */,
-				3B3C2362170B29AE00B8D3F8 /* MultipleImagesViewController.h */,
-				3B3C2363170B29AE00B8D3F8 /* MultipleImagesViewController.m */,
 				1BA71D6270A3916086210886 /* AVPhotoSlider */,
 			);
 			path = SightResight;
@@ -780,7 +775,6 @@
 			files = (
 				3B3C2C56170B430300B8D3F8 /* AppDelegate.m in Sources */,
 				3B3C2C57170B430600B8D3F8 /* main.m in Sources */,
-				3B3C2C59170B489800B8D3F8 /* MultipleImagesViewController.m in Sources */,
 				3B3C2C58170B430800B8D3F8 /* ViewController.m in Sources */,
 				3B3C2C5C170B48BE00B8D3F8 /* AGImagePickerController.m in Sources */,
 				3B3C2C5E170B48CA00B8D3F8 /* AGIPCAssetsController.m in Sources */,
