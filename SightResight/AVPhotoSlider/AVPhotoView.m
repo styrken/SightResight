@@ -27,7 +27,7 @@
         self.imageView = nil;
         self.delegate = self;
 
-        self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         [self.spinner setHidesWhenStopped:YES];
         self.spinner.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
         [self addSubview:self.spinner];
