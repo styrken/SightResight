@@ -53,8 +53,6 @@
 
     for(NSString *path in self.imagePaths)
     {
-        NSLog(@"PhotoFrame: %@", NSStringFromCGRect(photoFrame));
-
         // Create the photo and add it to view
         AVPhotoView *photo = [[AVPhotoView  alloc] initWithFrame:photoFrame];
         photo.imagePath = path;

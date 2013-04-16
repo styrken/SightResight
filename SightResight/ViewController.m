@@ -82,8 +82,6 @@
         [paths addObject:[obj.defaultRepresentation.url absoluteString]];
     }];
 
-    NSLog(@"Adding paths: %@", paths);
-
     if(pos == IMAGE_PICKER_TAG_LEFT)
         [self.photoController1 loadImagePaths:paths];
     else
