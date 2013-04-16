@@ -47,9 +47,6 @@
 
     [self.view addSubview:self.photoController1];
     [self.view addSubview:self.photoController2];
-
-    [self.photoController1 setBackgroundColor:[UIColor redColor]];
-    [self.photoController2 setBackgroundColor:[UIColor greenColor]];
 }
 
 
