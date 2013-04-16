@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 Appværk. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "ViewController.h"
 #import "AGImagePickerController.h"
 #import "MultipleImagesViewController.h"
+#import "AVPhotoController.h"
 
 #define IMAGE_PICKER_TAG_LEFT 1
 #define IMAGE_PICKER_TAG_RIGHT 2
@@ -16,6 +18,8 @@
 @interface ViewController ()
 @property (nonatomic, strong) MultipleImagesViewController *imageViewer1;
 @property (nonatomic, strong) MultipleImagesViewController *imageViewer2;
+@property (nonatomic, strong) AVPhotoController *photoController1;
+@property (nonatomic, strong) AVPhotoController *photoController2;
 @end
 
 @implementation ViewController
@@ -23,8 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
+
 	self.navigationItem.title = @"Sight Resight";
 	
 	// Set buttons
@@ -36,7 +39,21 @@
 	item.tag = IMAGE_PICKER_TAG_RIGHT;
 	self.navigationItem.rightBarButtonItem = item;
         
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sightresightSplash.png"]];
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sightresightSplash.png"]];
+
+    CGFloat halfWidth = self.view.frame.size.width / 2;
+    CGRect halfSize = CGRectMake(0, 0, halfWidth, self.view.frame.size.height);
+
+    self.photoController1 = [[AVPhotoController alloc] initWithFrame:halfSize];
+
+    halfSize.origin.x += halfWidth;
+    self.photoController2 = [[AVPhotoController alloc] initWithFrame:halfSize];
+
+    [self.view addSubview:self.photoController1];
+    [self.view addSubview:self.photoController2];
+
+    [self.photoController1 setBackgroundColor:[UIColor redColor]];
+    [self.photoController2 setBackgroundColor:[UIColor greenColor]];
 }
 
 
@@ -65,34 +82,19 @@
 - (void) addImageViewerWithAssets:(NSArray*)assets atPosition:(int)pos
 {
     self.view.backgroundColor = [UIColor blackColor];
-    
-    MultipleImagesViewController *imageViewer = pos == IMAGE_PICKER_TAG_LEFT ? self.imageViewer1 : self.imageViewer2;
-       
-    if(imageViewer != nil)
-    {
-        if(imageViewer.view)
-        {
-            [imageViewer.view removeFromSuperview];
-            imageViewer = nil;
-        }
-    }
-    
-    CGRect newFrame = self.view.bounds;
-    newFrame.size.width /= 2;
-    newFrame.origin.x = 0;
-    newFrame.origin.y = 0;
-    
-    if(pos == IMAGE_PICKER_TAG_RIGHT)
-        newFrame.origin.x = newFrame.size.width;
-        
-    imageViewer = [[MultipleImagesViewController alloc] initWithImageAssets:assets];
-    imageViewer.view.frame = newFrame;
-    [self.view addSubview:imageViewer.view];
-    
+
+    __block NSMutableArray *paths = [[NSMutableArray alloc] initWithCapacity:assets.count];
+
+    [assets enumerateObjectsUsingBlock:^(ALAsset * obj, NSUInteger idx, BOOL *stop) {
+        [paths addObject:[obj.defaultRepresentation.url absoluteString]];
+    }];
+
+    NSLog(@"Adding paths: %@", paths);
+
     if(pos == IMAGE_PICKER_TAG_LEFT)
-        self.imageViewer1 = imageViewer;
+        [self.photoController1 loadImagePaths:paths];
     else
-        self.imageViewer2 = imageViewer;
+        [self.photoController2 loadImagePaths:paths];
 }
 
 @end

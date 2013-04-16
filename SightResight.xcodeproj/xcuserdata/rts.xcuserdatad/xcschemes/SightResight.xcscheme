@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B314728170ADF2700D8F545"
-               BuildableName = "SightResight.app"
-               BlueprintName = "SightResight"
+               BuildableName = "Sight Resight.app"
+               BlueprintName = "Sight Resight"
                ReferencedContainer = "container:SightResight.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B314728170ADF2700D8F545"
-            BuildableName = "SightResight.app"
-            BlueprintName = "SightResight"
+            BuildableName = "Sight Resight.app"
+            BlueprintName = "Sight Resight"
             ReferencedContainer = "container:SightResight.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B314728170ADF2700D8F545"
-            BuildableName = "SightResight.app"
-            BlueprintName = "SightResight"
+            BuildableName = "Sight Resight.app"
+            BlueprintName = "Sight Resight"
             ReferencedContainer = "container:SightResight.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B314728170ADF2700D8F545"
-            BuildableName = "SightResight.app"
-            BlueprintName = "SightResight"
+            BuildableName = "Sight Resight.app"
+            BlueprintName = "Sight Resight"
             ReferencedContainer = "container:SightResight.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

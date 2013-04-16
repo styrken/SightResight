@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BA713E12CC25715C548AF3E /* AVPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA71DEB6B40D2AE3B30DA24 /* AVPhotoView.m */; };
+		1BA7155E321A0724D59744DD /* AVPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA71B27F2759E5384FB7550 /* AVPhotoController.m */; };
 		3B31472D170ADF2700D8F545 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B31472C170ADF2700D8F545 /* UIKit.framework */; };
 		3B31472F170ADF2700D8F545 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B31472E170ADF2700D8F545 /* Foundation.framework */; };
 		3B314731170ADF2700D8F545 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B314730170ADF2700D8F545 /* CoreGraphics.framework */; };
@@ -95,7 +97,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B314729170ADF2700D8F545 /* SightResight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightResight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BA71496222CF2BE377B1DD5 /* AVPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPhotoView.h; sourceTree = "<group>"; };
+		1BA716A11BD31EC9AB37E09A /* AVPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPhotoController.h; sourceTree = "<group>"; };
+		1BA71B27F2759E5384FB7550 /* AVPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPhotoController.m; sourceTree = "<group>"; };
+		1BA71DEB6B40D2AE3B30DA24 /* AVPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPhotoView.m; sourceTree = "<group>"; };
+		3B314729170ADF2700D8F545 /* Sight Resight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sight Resight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B31472C170ADF2700D8F545 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3B31472E170ADF2700D8F545 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3B314730170ADF2700D8F545 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -288,6 +294,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BA71D6270A3916086210886 /* AVPhotoSlider */ = {
+			isa = PBXGroup;
+			children = (
+				1BA71B27F2759E5384FB7550 /* AVPhotoController.m */,
+				1BA716A11BD31EC9AB37E09A /* AVPhotoController.h */,
+				1BA71DEB6B40D2AE3B30DA24 /* AVPhotoView.m */,
+				1BA71496222CF2BE377B1DD5 /* AVPhotoView.h */,
+			);
+			path = AVPhotoSlider;
+			sourceTree = "<group>";
+		};
 		3B314720170ADF2700D8F545 = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +322,7 @@
 		3B31472A170ADF2700D8F545 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B314729170ADF2700D8F545 /* SightResight.app */,
+				3B314729170ADF2700D8F545 /* Sight Resight.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,6 +353,7 @@
 				3B314747170ADF2800D8F545 /* ViewController.xib */,
 				3B3C2362170B29AE00B8D3F8 /* MultipleImagesViewController.h */,
 				3B3C2363170B29AE00B8D3F8 /* MultipleImagesViewController.m */,
+				1BA71D6270A3916086210886 /* AVPhotoSlider */,
 			);
 			path = SightResight;
 			sourceTree = "<group>";
@@ -679,9 +697,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3B314728170ADF2700D8F545 /* SightResight */ = {
+		3B314728170ADF2700D8F545 /* Sight Resight */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B31474C170ADF2800D8F545 /* Build configuration list for PBXNativeTarget "SightResight" */;
+			buildConfigurationList = 3B31474C170ADF2800D8F545 /* Build configuration list for PBXNativeTarget "Sight Resight" */;
 			buildPhases = (
 				3B314725170ADF2700D8F545 /* Sources */,
 				3B314726170ADF2700D8F545 /* Frameworks */,
@@ -691,9 +709,9 @@
 			);
 			dependencies = (
 			);
-			name = SightResight;
+			name = "Sight Resight";
 			productName = SightResight;
-			productReference = 3B314729170ADF2700D8F545 /* SightResight.app */;
+			productReference = 3B314729170ADF2700D8F545 /* Sight Resight.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -717,7 +735,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B314728170ADF2700D8F545 /* SightResight */,
+				3B314728170ADF2700D8F545 /* Sight Resight */,
 			);
 		};
 /* End PBXProject section */
@@ -817,6 +835,8 @@
 				3B3C2D50170B49A100B8D3F8 /* NIPhotoScrubberView.m in Sources */,
 				3B3C2D59170B4A1D00B8D3F8 /* CaptionedPhotoView.m in Sources */,
 				3B3C2D5A170B4A1D00B8D3F8 /* NetworkPhotoAlbumViewController.m in Sources */,
+				1BA7155E321A0724D59744DD /* AVPhotoController.m in Sources */,
+				1BA713E12CC25715C548AF3E /* AVPhotoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,7 +970,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B31474C170ADF2800D8F545 /* Build configuration list for PBXNativeTarget "SightResight" */ = {
+		3B31474C170ADF2800D8F545 /* Build configuration list for PBXNativeTarget "Sight Resight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B31474D170ADF2800D8F545 /* Debug */,
