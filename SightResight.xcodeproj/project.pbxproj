@@ -19,13 +19,11 @@
 		3B3C2C56170B430300B8D3F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B31473C170ADF2800D8F545 /* AppDelegate.m */; };
 		3B3C2C57170B430600B8D3F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B314738170ADF2700D8F545 /* main.m */; };
 		3B3C2C58170B430800B8D3F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B314745170ADF2800D8F545 /* ViewController.m */; };
-		3B3C2C5C170B48BE00B8D3F8 /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2343170B270100B8D3F8 /* AGImagePickerController.m */; };
 		3B3C2C5D170B48C600B8D3F8 /* AGIPCAlbumsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2346170B270100B8D3F8 /* AGIPCAlbumsController.m */; };
 		3B3C2C5E170B48CA00B8D3F8 /* AGIPCAssetsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2348170B270100B8D3F8 /* AGIPCAssetsController.m */; };
 		3B3C2C5F170B48D100B8D3F8 /* AGIPCGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C234A170B270100B8D3F8 /* AGIPCGridCell.m */; };
 		3B3C2C60170B48D300B8D3F8 /* AGIPCToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C234E170B270100B8D3F8 /* AGIPCToolbarItem.m */; };
 		3B3C2C61170B48D600B8D3F8 /* ALAsset+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2350170B270100B8D3F8 /* ALAsset+AGIPC.m */; };
-		3B3C2C62170B48DE00B8D3F8 /* AGImagePickerController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2340170B270100B8D3F8 /* AGImagePickerController+Helper.m */; };
 		3B3C2C63170B48F000B8D3F8 /* AGIPCGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C234C170B270100B8D3F8 /* AGIPCGridItem.m */; };
 		3B3C2D5B170CAB3E00B8D3F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B314747170ADF2800D8F545 /* ViewController.xib */; };
 		3B9A9066170CB1C10073A7A5 /* sightresight1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A905C170CB1C10073A7A5 /* sightresight1024.png */; };
@@ -41,6 +39,8 @@
 		3B9A9072170CB1DF0073A7A5 /* sightresight144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9071170CB1DF0073A7A5 /* sightresight144.png */; };
 		3B9A9074170CB1E60073A7A5 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9073170CB1E60073A7A5 /* Default-Landscape~ipad.png */; };
 		3B9A9076170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A9075170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png */; };
+		3BB2D89B171E827F000FCE48 /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2D899171E827F000FCE48 /* AGImagePickerController.m */; };
+		3BB2D89C171E827F000FCE48 /* AGImagePickerController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2D89A171E827F000FCE48 /* AGImagePickerController+Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +97,8 @@
 		3B9A9071170CB1DF0073A7A5 /* sightresight144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight144.png; sourceTree = "<group>"; };
 		3B9A9073170CB1E60073A7A5 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		3B9A9075170CB1EB0073A7A5 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		3BB2D899171E827F000FCE48 /* AGImagePickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AGImagePickerController.m; path = ../submodules/AGImagePickerController.m; sourceTree = "<group>"; };
+		3BB2D89A171E827F000FCE48 /* AGImagePickerController+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AGImagePickerController+Helper.m"; path = "../submodules/AGImagePickerController+Helper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,14 +165,15 @@
 		3B314732170ADF2700D8F545 /* SightResight */ = {
 			isa = PBXGroup;
 			children = (
+				3BB2D898171E8255000FCE48 /* Fixes */,
 				3B9A905A170CB1C10073A7A5 /* gfx */,
 				3B314733170ADF2700D8F545 /* Supporting Files */,
+				1BA71D6270A3916086210886 /* AVPhotoSlider */,
 				3B31473B170ADF2700D8F545 /* AppDelegate.h */,
 				3B31473C170ADF2800D8F545 /* AppDelegate.m */,
 				3B314744170ADF2800D8F545 /* ViewController.h */,
 				3B314745170ADF2800D8F545 /* ViewController.m */,
 				3B314747170ADF2800D8F545 /* ViewController.xib */,
-				1BA71D6270A3916086210886 /* AVPhotoSlider */,
 			);
 			path = SightResight;
 			sourceTree = "<group>";
@@ -245,6 +248,15 @@
 				3B9A9065170CB1C10073A7A5 /* sightresightSplash@2x.png */,
 			);
 			path = splash;
+			sourceTree = "<group>";
+		};
+		3BB2D898171E8255000FCE48 /* Fixes */ = {
+			isa = PBXGroup;
+			children = (
+				3BB2D899171E827F000FCE48 /* AGImagePickerController.m */,
+				3BB2D89A171E827F000FCE48 /* AGImagePickerController+Helper.m */,
+			);
+			name = Fixes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,12 +339,12 @@
 				3B3C2C56170B430300B8D3F8 /* AppDelegate.m in Sources */,
 				3B3C2C57170B430600B8D3F8 /* main.m in Sources */,
 				3B3C2C58170B430800B8D3F8 /* ViewController.m in Sources */,
-				3B3C2C5C170B48BE00B8D3F8 /* AGImagePickerController.m in Sources */,
 				3B3C2C5E170B48CA00B8D3F8 /* AGIPCAssetsController.m in Sources */,
+				3BB2D89B171E827F000FCE48 /* AGImagePickerController.m in Sources */,
+				3BB2D89C171E827F000FCE48 /* AGImagePickerController+Helper.m in Sources */,
 				3B3C2C5F170B48D100B8D3F8 /* AGIPCGridCell.m in Sources */,
 				3B3C2C60170B48D300B8D3F8 /* AGIPCToolbarItem.m in Sources */,
 				3B3C2C61170B48D600B8D3F8 /* ALAsset+AGIPC.m in Sources */,
-				3B3C2C62170B48DE00B8D3F8 /* AGImagePickerController+Helper.m in Sources */,
 				3B3C2C5D170B48C600B8D3F8 /* AGIPCAlbumsController.m in Sources */,
 				3B3C2C63170B48F000B8D3F8 /* AGIPCGridItem.m in Sources */,
 				1BA7155E321A0724D59744DD /* AVPhotoController.m in Sources */,
