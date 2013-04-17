@@ -67,6 +67,7 @@
 
     // Set the total contentsize
     self.contentSize = CGSizeMake((photoWith * self.photoViews.count), photoFrame.size.height);
+	self.contentOffset = CGPointMake(0, 0);
 
     // Bit hacky.. bit it will invoke showing of first page
     [self scrollViewDidEndDecelerating:self];
