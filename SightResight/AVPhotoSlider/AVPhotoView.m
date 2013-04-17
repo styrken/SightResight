@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIView *captionView;
 @property (nonatomic, strong) UILabel *captionLabel;
+@property (nonatomic, assign) CGPoint captionViewCenter;
 @end
 
 @implementation AVPhotoView
@@ -50,20 +51,24 @@
         [self addGestureRecognizer:twoFingerTapRecognizer];
 
         // Add caption view
-        /*
-        self.captionView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-400, self.frame.size.width, 40)];
+
+        self.captionView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-80, self.frame.size.width, 40)];
         [self.captionView setBackgroundColor:[UIColor blackColor]];
+
+        NSLog(@"Caption frext: %@", NSStringFromCGRect(self.captionView.frame));
+        NSLog(@"Own frame: %@", NSStringFromCGRect(self.frame));
 
         self.captionView.layer.opacity = 0.8;
 
-        self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.captionView.frame.size.width, self.captionView.frame.size.height)];
+        self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.captionView.frame.size.width-10, self.captionView.frame.size.height)];
         self.captionLabel.font = [UIFont boldSystemFontOfSize:16];
         self.captionLabel.textColor = [UIColor whiteColor];
+        self.captionLabel.backgroundColor = [UIColor clearColor];
 
         [self.captionView addSubview:self.captionLabel];
         [self addSubview:self.captionView];
-
-        self.captionLabel.text = @"HEJ DU GAMLE";      */
+        self.captionLabel.text = @"Loading ...";
+        self.captionViewCenter = self.captionView.center;
     }
 
     return self;
@@ -150,13 +155,12 @@
     }
 
     [self.spinner stopAnimating];
-    NSLog(@"Caption: %@", self.caption);
     [self.captionLabel setText:self.caption];
 
     self.imageView = [[UIImageView alloc] initWithImage:image];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self addSubview:self.imageView];
-    //[self insertSubview:self.imageView belowSubview:self.captionView];
+    //[self addSubview:self.imageView];
+    [self insertSubview:self.imageView belowSubview:self.captionView];
 
     [self calculateScaling];
     [self centerScrollViewContents];
@@ -192,6 +196,16 @@
         contentsFrame.origin.y = 0.0f;
 
     self.imageView.frame = contentsFrame;
+}
+
+- (void) fixCaptionView
+{
+    CGPoint newCenter = self.captionViewCenter;
+
+    newCenter.x += self.contentOffset.x;
+    newCenter.y += self.contentOffset.y;
+
+    self.captionView.center = newCenter;
 }
 
 - (void) displayError
@@ -243,16 +257,12 @@
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
     [self centerScrollViewContents];
+    [self fixCaptionView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    /*
-    CGPoint contentOffset = [scrollView contentOffset];
-    CGPoint newCenter = CGPointMake(self.captionView.frame.origin.x + contentOffset.x, self.captionView.frame.origin.y + contentOffset.y);
-    [self.captionView setCenter:newCenter];
-    */
+    [self fixCaptionView];
 }
-
 
 @end
