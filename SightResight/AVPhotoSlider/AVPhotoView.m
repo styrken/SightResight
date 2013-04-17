@@ -82,18 +82,14 @@
         if(self.imagePath.length > 0)
         {
             NSURL *url = [NSURL URLWithString:self.imagePath];
-            if ([[url scheme] isEqualToString:@"file"])
+            if ([[url scheme] isEqualToString:@"file"] || [url scheme] == NULL)
             {
-                dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-                dispatch_async(queue, ^{
+				UIImage *image = [UIImage imageNamed:self.imagePath];
 
-                    UIImage *image = [UIImage imageNamed:self.imagePath];
-
-                    if(image)
-                        [self setImage:image];
-                    else
-                        [self displayError];
-                });
+				if(image)
+					[self setImage:image];
+				else
+					[self displayError];
             }
             else if ([[url scheme] isEqualToString:@"assets-library"])
             {
@@ -176,7 +172,7 @@
     CGFloat minScale = MIN(scaleWidth, scaleHeight);
 
     self.minimumZoomScale = minScale;
-    self.maximumZoomScale = 2.0f;
+    self.maximumZoomScale = 1.0f;
     self.zoomScale = minScale;
 }
 
