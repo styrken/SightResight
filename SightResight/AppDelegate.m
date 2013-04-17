@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Appværk. All rights reserved.
 //
 
+#import <BugSense-iOS/BugSenseController.h>
 #import "AppDelegate.h"
 
 #import "ViewController.h"
@@ -14,6 +15,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[BugSenseController sharedControllerWithBugSenseAPIKey:@"b93a7181"];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     

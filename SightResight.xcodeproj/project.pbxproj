@@ -28,6 +28,9 @@
 		3B3C2C61170B48D600B8D3F8 /* ALAsset+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C2350170B270100B8D3F8 /* ALAsset+AGIPC.m */; };
 		3B3C2C63170B48F000B8D3F8 /* AGIPCGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C234C170B270100B8D3F8 /* AGIPCGridItem.m */; };
 		3B3C2D5B170CAB3E00B8D3F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B314747170ADF2800D8F545 /* ViewController.xib */; };
+		3B682E16171EAB2200246ABC /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B682E15171EAB2200246ABC /* BugSense-iOS.framework */; };
+		3B682E18171EAB3D00246ABC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B682E17171EAB3D00246ABC /* SystemConfiguration.framework */; };
+		3B682E1A171EAB4500246ABC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B682E19171EAB4500246ABC /* libz.dylib */; };
 		3B9A9066170CB1C10073A7A5 /* sightresight1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A905C170CB1C10073A7A5 /* sightresight1024.png */; };
 		3B9A9067170CB1C10073A7A5 /* sightresight144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A905D170CB1C10073A7A5 /* sightresight144.png */; };
 		3B9A9068170CB1C10073A7A5 /* sightresight29.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A905E170CB1C10073A7A5 /* sightresight29.png */; };
@@ -88,6 +91,9 @@
 		3B3C2350170B270100B8D3F8 /* ALAsset+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+AGIPC.m"; sourceTree = "<group>"; };
 		3B3C235A170B27E200B8D3F8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		3B3C2BCE170B426800B8D3F8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		3B682E15171EAB2200246ABC /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "submodules/BugSense-iOS.framework"; sourceTree = "<group>"; };
+		3B682E17171EAB3D00246ABC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3B682E19171EAB4500246ABC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3B9A905C170CB1C10073A7A5 /* sightresight1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight1024.png; sourceTree = "<group>"; };
 		3B9A905D170CB1C10073A7A5 /* sightresight144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight144.png; sourceTree = "<group>"; };
 		3B9A905E170CB1C10073A7A5 /* sightresight29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sightresight29.png; sourceTree = "<group>"; };
@@ -110,6 +116,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B682E1A171EAB4500246ABC /* libz.dylib in Frameworks */,
+				3B682E18171EAB3D00246ABC /* SystemConfiguration.framework in Frameworks */,
+				3B682E16171EAB2200246ABC /* BugSense-iOS.framework in Frameworks */,
 				3B3C2BCF170B426800B8D3F8 /* ImageIO.framework in Frameworks */,
 				3B3C235B170B27E200B8D3F8 /* AssetsLibrary.framework in Frameworks */,
 				3B31472D170ADF2700D8F545 /* UIKit.framework in Frameworks */,
@@ -156,6 +165,9 @@
 		3B31472B170ADF2700D8F545 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B682E19171EAB4500246ABC /* libz.dylib */,
+				3B682E17171EAB3D00246ABC /* SystemConfiguration.framework */,
+				3B682E15171EAB2200246ABC /* BugSense-iOS.framework */,
 				3B3C233E170B270100B8D3F8 /* AGImagePickerController */,
 				3B3C2BCE170B426800B8D3F8 /* ImageIO.framework */,
 				3B3C235A170B27E200B8D3F8 /* AssetsLibrary.framework */,
@@ -448,6 +460,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)/submodules\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SightResight/SightResight-Prefix.pch";
@@ -455,6 +468,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -467,6 +481,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)/submodules\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SightResight/SightResight-Prefix.pch";
@@ -474,6 +489,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
