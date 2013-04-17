@@ -200,8 +200,8 @@
     self.isLoaded = NO;
 
     UIAlertView *alert =[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Unable to load image", @"Title for when loading of image fails")
-                                                   message:NSLocalizedString(@"We were unable to load the image. Please try again later", @"Message explaining why image could not be loaded")
-                                                  delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+                                                   message:NSLocalizedString(@"We were unable to load the image. Please try again", @"Message explaining why image could not be loaded")
+                                                  delegate:nil cancelButtonTitle:NSLocalizedString(@"Okay", @"Okay button when unable to load image") otherButtonTitles:nil];
     [alert show];
 }
 

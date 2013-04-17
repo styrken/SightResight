@@ -82,7 +82,7 @@
         [paths addObject:[obj.defaultRepresentation.url absoluteString]];
     }];
 
-	[paths addObject:@"finalimage.png"];
+	[paths addObject:@"finalImage.png"];
 
     if(pos == IMAGE_PICKER_TAG_LEFT)
         [self.photoController1 loadImagePaths:paths];
