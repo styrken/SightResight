@@ -1,6 +1,3 @@
 [submodule "submodules/AGImagePicker"]
 	path = submodules/AGImagePicker
 	url = https://github.com/arturgrigor/AGImagePickerController.git
-[submodule "submodules/PTImageAlbumView"]
-	path = submodules/PTImageAlbumView
-	url = https://github.com/exalted/PTImageAlbumViewController.git
