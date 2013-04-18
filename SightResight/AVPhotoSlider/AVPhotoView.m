@@ -22,7 +22,7 @@
 
 @implementation AVPhotoView
 
-- (id)initWithFrame:(CGRect)frame
+- (id) initWithFrame:(CGRect)frame photo:(AVPhoto *)photo
 {
     self = [super initWithFrame:frame];
     if(self)
@@ -30,7 +30,7 @@
         self.isLoaded = NO;
         self.isAborted = NO;
         self.imageView = nil;
-        self.photo = nil;
+        self.photo = photo;
         self.delegate = self;
 
         // Spinner
@@ -51,23 +51,35 @@
         [self addGestureRecognizer:twoFingerTapRecognizer];
 
         // Add caption view
-        self.captionView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-80, self.frame.size.width, 40)];
+        self.captionView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-40, self.frame.size.width, 40)];
         [self.captionView setBackgroundColor:[UIColor blackColor]];
 
         self.captionView.layer.opacity = 0.8;
 
-        self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.captionView.frame.size.width-10, self.captionView.frame.size.height)];
+        self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.captionView.frame.size.width-20, self.captionView.frame.size.height)];
         self.captionLabel.font = [UIFont boldSystemFontOfSize:16];
         self.captionLabel.textColor = [UIColor whiteColor];
         self.captionLabel.backgroundColor = [UIColor clearColor];
+
+        if(self.photo.captionRightSide)
+            self.captionLabel.textAlignment = NSTextAlignmentRight;
 
         [self.captionView addSubview:self.captionLabel];
         [self addSubview:self.captionView];
         self.captionLabel.text = @"Loading ...";
         self.captionViewCenter = self.captionView.center;
+
+        self.spinner.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        self.captionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        self.captionLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
 
     return self;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    return [self initWithFrame:frame photo:nil];
 }
 
 - (void)loadImage
@@ -153,6 +165,7 @@
     }
 
     [self.spinner stopAnimating];
+
     [self.captionLabel setText:self.photo.caption];
 
     self.imageView = [[UIImageView alloc] initWithImage:image];

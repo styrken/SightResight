@@ -19,6 +19,9 @@
 */
 @interface AVPhotoView : UIScrollView
 
+
+- (id) initWithFrame:(CGRect)frame photo:(AVPhoto *)photo;
+
 /**
 * AV Photo
 *

@@ -25,6 +25,9 @@
         self.delegate = self;
         self.pagingEnabled = YES;
         self.photoViews = [[NSMutableArray alloc] init];
+        self.photos = [NSArray array];
+
+        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
 
     return self;
@@ -35,11 +38,14 @@
     self.photos = photos;
 
     if(self.photos.count > 0)
-        [self setupScrollView];
+        [self setupScrollView:0];
 }
 
-- (void) setupScrollView
+- (void) setupScrollView:(int)page
 {
+    if(self.photos.count == 0)
+        return;
+
     // Reset all stuff
     [self.photoViews enumerateObjectsUsingBlock:^(AVPhotoView *obj, NSUInteger idx, BOOL *stop) {
         [obj unloadImage];
@@ -55,11 +61,10 @@
     for(AVPhoto *photo in self.photos)
     {
         // Create the photo and add it to view
-        AVPhotoView *photoview = [[AVPhotoView  alloc] initWithFrame:photoFrame];
-        photoview.photo = photo;
+        AVPhotoView *photoview = [[AVPhotoView  alloc] initWithFrame:photoFrame photo:photo];
         [self addSubview:photoview];
 
-        // Save if for later user
+        // Save it for later user
         [self.photoViews addObject:photoview];
 
         // Add with to origin for next image
@@ -68,10 +73,34 @@
 
     // Set the total contentsize
     self.contentSize = CGSizeMake((photoWith * self.photoViews.count), photoFrame.size.height);
-	self.contentOffset = CGPointMake(0, 0);
+	self.contentOffset = CGPointMake(page*photoWith, 0);
 
-    // Bit hacky.. bit it will invoke showing of first page
+    // Bit hacky.. bit it will invoke showing of current page
     [self scrollViewDidEndDecelerating:self];
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    CGFloat pageWidth = self.frame.size.width;
+    int currentPage = floor((self.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+
+    [super setFrame:frame];
+    [self setupScrollView:currentPage];
+    /*
+    __block CGRect photoFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    CGFloat photoWith = photoFrame.size.width;
+    [self.photoViews enumerateObjectsUsingBlock:^(AVPhotoView * obj, NSUInteger idx, BOOL *stop) {
+        [obj setFrame:photoFrame];
+        [obj unloadImage];
+
+        if(idx == currentPage)
+            [obj loadImage];
+
+        photoFrame.origin.x += photoWith;
+    }];
+
+    self.contentSize = CGSizeMake((photoWith * self.photoViews.count), photoFrame.size.height);
+    self.contentOffset = CGPointMake(currentPage*photoWith, 0); */
 }
 
 #pragma mark - ScrollView Delegate

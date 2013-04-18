@@ -19,6 +19,7 @@
         self.zoomDiasbled = NO;
         self.caption = @"";
         self.imagePath = @"";
+        self.captionRightSide = NO;
     }
 
     return self;

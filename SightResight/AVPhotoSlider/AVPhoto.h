@@ -32,4 +32,10 @@
 */
 @property (nonatomic, assign) BOOL zoomDiasbled;
 
+/*
+ * Set to true if caption should be in the right side of the page
+ *
+ */
+@property (nonatomic, assign) BOOL captionRightSide;
+
 @end

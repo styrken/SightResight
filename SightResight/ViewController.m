@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Appværk. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import "ViewController.h"
 #import "AGImagePickerController.h"
 #import "AVPhotoController.h"
@@ -14,9 +16,17 @@
 #define IMAGE_PICKER_TAG_LEFT 1
 #define IMAGE_PICKER_TAG_RIGHT 2
 
+enum {
+    ScreenViewVertical,
+    ScreenViewSingle,
+    ScreenViewAlpha
+};
+typedef int ScreenViewType;
+
 @interface ViewController ()
 @property (nonatomic, strong) AVPhotoController *photoController1;
 @property (nonatomic, strong) AVPhotoController *photoController2;
+@property (nonatomic, strong) UISlider *opacitySlider;
 @end
 
 @implementation ViewController
@@ -25,9 +35,11 @@
 {
     [super viewDidLoad];
 
-	self.navigationItem.title = @"Sight Resight";
+	//self.navigationItem.title = @"Sight Resight";
+    self.navigationController.toolbar.tintColor = [UIColor colorWithRed:4.0f/255.0f green:37.0f/255.0f blue:74.0f/255.0f alpha:1.0];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Default-Landscape~ipad.png"]];
 
+    // Cool splashscreen
     UIImageView *splashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default-Landscape~ipad.png"]];
     [self.navigationController.view addSubview:splashView];
 
@@ -43,19 +55,107 @@
 	item = [[UIBarButtonItem alloc] initWithTitle:@"Select images" style:UIBarButtonItemStyleBordered target:self action:@selector(selectImages:)];
 	item.tag = IMAGE_PICKER_TAG_RIGHT;
 	self.navigationItem.rightBarButtonItem = item;
-        
-    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sightresightSplash.png"]];
 
-    CGFloat halfWidth = self.view.frame.size.width / 2;
-    CGRect halfSize = CGRectMake(0, 0, halfWidth, self.view.frame.size.height);
+    // Slider for changing opacity
+    self.opacitySlider = [[UISlider alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2)-100, 10, 200, 20)];
+    self.opacitySlider.maximumValue = 1.0;
+    self.opacitySlider.minimumValue = 0.0;
+    self.opacitySlider.value = 0.8;
+    [self.opacitySlider addTarget:self action:@selector(setOpacity:) forControlEvents:UIControlEventValueChanged];
+    [self.navigationController.toolbar addSubview:self.opacitySlider];
 
-    self.photoController1 = [[AVPhotoController alloc] initWithFrame:halfSize];
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Side by side", @"Gallery", @"Overlay", nil]];
+    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    segmentedControl.selectedSegmentIndex = 0;
+    [segmentedControl addTarget:self action:@selector(changeView:) forControlEvents:UIControlEventValueChanged];
+    self.navigationItem.titleView = segmentedControl;
 
-    halfSize.origin.x += halfWidth;
-    self.photoController2 = [[AVPhotoController alloc] initWithFrame:halfSize];
+    // Setup photocontrollers
+    self.photoController1 = [[AVPhotoController alloc] initWithFrame:CGRectZero];
+    self.photoController2 = [[AVPhotoController alloc] initWithFrame:CGRectZero];
 
     [self.view addSubview:self.photoController1];
     [self.view addSubview:self.photoController2];
+
+    [self setScreenView:ScreenViewVertical];
+}
+
+- (void) setScreenView:(ScreenViewType)screenView
+{
+    switch (screenView)
+    {
+        case ScreenViewVertical:
+        {
+            NSLog(@"Side by side");
+            self.navigationController.toolbarHidden = YES;
+
+            CGFloat halfWidth = self.view.frame.size.width / 2;
+            CGRect halfSize = CGRectMake(0, 0, halfWidth, self.view.frame.size.height);
+            self.photoController1.frame = halfSize;
+            halfSize.origin.x += halfWidth;
+            self.photoController2.frame = halfSize;
+            self.photoController2.layer.opacity = 1;
+
+            self.photoController1.hidden = NO;
+            self.photoController2.hidden = NO;
+
+            break;
+        }
+        case ScreenViewSingle:
+        {
+            NSLog(@"Gallery mode");
+            self.navigationController.toolbarHidden = YES;
+
+            CGRect fullSize = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.photoController2.frame = fullSize;
+            self.photoController2.layer.opacity = 1;
+
+            self.photoController1.hidden = YES;
+            self.photoController2.hidden = NO;
+
+
+            break;
+        }
+        case ScreenViewAlpha:
+        {
+            NSLog(@"Alpha mode");
+            self.navigationController.toolbarHidden = NO;
+
+            CGRect fullSize = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.photoController1.frame = fullSize;
+            self.photoController2.frame = fullSize;
+            self.photoController2.layer.opacity = self.opacitySlider.value;
+
+            self.photoController1.hidden = NO;
+            self.photoController2.hidden = NO;
+
+            break;
+        }
+    }
+
+}
+
+- (void) changeView:(UISegmentedControl *)control
+{
+    switch (control.selectedSegmentIndex)
+    {
+        case 0: // Side by side
+            [self setScreenView:ScreenViewVertical];
+            break;
+
+        case 1: // Gallery mode
+            [self setScreenView:ScreenViewSingle];
+            break;
+
+        case 2: // Overlay
+            [self setScreenView:ScreenViewAlpha];
+            break;
+    }
+}
+
+- (void) setOpacity:(UISlider*)sender
+{
+    self.photoController2.layer.opacity = sender.value;
 }
 
 - (IBAction)selectImages:(id)sender
@@ -92,6 +192,9 @@
 
         photo.imagePath = obj.defaultRepresentation.url.absoluteString;
         photo.caption = obj.defaultRepresentation.filename;
+
+        if(pos == IMAGE_PICKER_TAG_RIGHT)
+            photo.captionRightSide = YES;
 
         [photos addObject:photo];
     }];
