@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1BA713E12CC25715C548AF3E /* AVPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA71DEB6B40D2AE3B30DA24 /* AVPhotoView.m */; };
 		1BA7155E321A0724D59744DD /* AVPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA71B27F2759E5384FB7550 /* AVPhotoController.m */; };
+		1BA71C26D68F4D3009CE5446 /* AVPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA71E7AE3891EA55BFECFC8 /* AVPhoto.m */; };
 		3B178E04171EA7DC009B03EB /* finalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B178E02171EA7DC009B03EB /* finalImage.png */; };
 		3B178E05171EA7DC009B03EB /* finalImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B178E03171EA7DC009B03EB /* finalImage@2x.png */; };
 		3B31472D170ADF2700D8F545 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B31472C170ADF2700D8F545 /* UIKit.framework */; };
@@ -49,10 +50,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BA71450ED4EDFC715DD8467 /* AVPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPhoto.h; sourceTree = "<group>"; };
 		1BA71496222CF2BE377B1DD5 /* AVPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPhotoView.h; sourceTree = "<group>"; };
 		1BA716A11BD31EC9AB37E09A /* AVPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPhotoController.h; sourceTree = "<group>"; };
 		1BA71B27F2759E5384FB7550 /* AVPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPhotoController.m; sourceTree = "<group>"; };
 		1BA71DEB6B40D2AE3B30DA24 /* AVPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPhotoView.m; sourceTree = "<group>"; };
+		1BA71E7AE3891EA55BFECFC8 /* AVPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPhoto.m; sourceTree = "<group>"; };
 		3B178E02171EA7DC009B03EB /* finalImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finalImage.png; sourceTree = "<group>"; };
 		3B178E03171EA7DC009B03EB /* finalImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finalImage@2x.png"; sourceTree = "<group>"; };
 		3B314729170ADF2700D8F545 /* Sight Resight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sight Resight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +140,8 @@
 				1BA716A11BD31EC9AB37E09A /* AVPhotoController.h */,
 				1BA71DEB6B40D2AE3B30DA24 /* AVPhotoView.m */,
 				1BA71496222CF2BE377B1DD5 /* AVPhotoView.h */,
+				1BA71E7AE3891EA55BFECFC8 /* AVPhoto.m */,
+				1BA71450ED4EDFC715DD8467 /* AVPhoto.h */,
 			);
 			path = AVPhotoSlider;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				3B3C2C63170B48F000B8D3F8 /* AGIPCGridItem.m in Sources */,
 				1BA7155E321A0724D59744DD /* AVPhotoController.m in Sources */,
 				1BA713E12CC25715C548AF3E /* AVPhotoView.m in Sources */,
+				1BA71C26D68F4D3009CE5446 /* AVPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

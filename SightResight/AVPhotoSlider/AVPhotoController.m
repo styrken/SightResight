@@ -7,9 +7,10 @@
 
 #import "AVPhotoController.h"
 #import "AVPhotoView.h"
+#import "AVPhoto.h"
 
 @interface AVPhotoController () <UIScrollViewDelegate>
-@property (nonatomic, strong) NSArray *imagePaths;
+@property (nonatomic, strong) NSArray *photos;
 @property (nonatomic, strong) NSMutableArray *photoViews;
 @end
 
@@ -29,11 +30,11 @@
     return self;
 }
 
-- (void) loadImagePaths:(NSArray*)paths
+- (void) loadPhotos:(NSArray*)photos
 {
-    self.imagePaths = paths;
+    self.photos = photos;
 
-    if(self.imagePaths.count > 0)
+    if(self.photos.count > 0)
         [self setupScrollView];
 }
 
@@ -51,15 +52,15 @@
     CGRect photoFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     CGFloat photoWith = photoFrame.size.width;
 
-    for(NSString *path in self.imagePaths)
+    for(AVPhoto *photo in self.photos)
     {
         // Create the photo and add it to view
-        AVPhotoView *photo = [[AVPhotoView  alloc] initWithFrame:photoFrame];
-        photo.imagePath = path;
-        [self addSubview:photo];
+        AVPhotoView *photoview = [[AVPhotoView  alloc] initWithFrame:photoFrame];
+        photoview.photo = photo;
+        [self addSubview:photoview];
 
         // Save if for later user
-        [self.photoViews addObject:photo];
+        [self.photoViews addObject:photoview];
 
         // Add with to origin for next image
         photoFrame.origin.x += photoWith;

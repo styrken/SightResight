@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AGImagePickerController.h"
 #import "AVPhotoController.h"
+#import "AVPhoto.h"
 
 #define IMAGE_PICKER_TAG_LEFT 1
 #define IMAGE_PICKER_TAG_RIGHT 2
@@ -25,8 +26,16 @@
     [super viewDidLoad];
 
 	self.navigationItem.title = @"Sight Resight";
-	
-	// Set buttons
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Default-Landscape~ipad.png"]];
+
+    UIImageView *splashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default-Landscape~ipad.png"]];
+    [self.navigationController.view addSubview:splashView];
+
+    [UIView animateWithDuration:1.0 animations:^{
+        splashView.alpha = 0.0;
+    }];
+
+    // Set buttons
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Select images" style:UIBarButtonItemStyleBordered target:self action:@selector(selectImages:)];
 	item.tag = IMAGE_PICKER_TAG_LEFT;
 	self.navigationItem.leftBarButtonItem = item;
@@ -75,18 +84,29 @@
 {
     self.view.backgroundColor = [UIColor blackColor];
 
-    __block NSMutableArray *paths = [[NSMutableArray alloc] initWithCapacity:assets.count];
+    __block NSMutableArray *photos = [[NSMutableArray alloc] initWithCapacity:assets.count];
 
     [assets enumerateObjectsUsingBlock:^(ALAsset * obj, NSUInteger idx, BOOL *stop) {
-        [paths addObject:[obj.defaultRepresentation.url absoluteString]];
+
+        AVPhoto *photo = [[AVPhoto alloc] init];
+
+        photo.imagePath = obj.defaultRepresentation.url.absoluteString;
+        photo.caption = obj.defaultRepresentation.filename;
+
+        [photos addObject:photo];
     }];
 
-	[paths addObject:@"finalImage.png"];
+    AVPhoto *photo = [[AVPhoto alloc] init];
+    photo.imagePath = @"finalImage.png";
+    photo.caption = @"End of gallery";
+    photo.zoomDiasbled = YES;
+
+	[photos addObject:photo];
 
     if(pos == IMAGE_PICKER_TAG_LEFT)
-        [self.photoController1 loadImagePaths:paths];
+        [self.photoController1 loadPhotos:photos];
     else
-        [self.photoController2 loadImagePaths:paths];
+        [self.photoController2 loadPhotos:photos];
 }
 
 @end

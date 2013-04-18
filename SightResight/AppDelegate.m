@@ -23,10 +23,10 @@
 	self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
 	self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 	self.navController.navigationBar.tintColor = [UIColor colorWithRed:4.0f/255.0f green:37.0f/255.0f blue:74.0f/255.0f alpha:1.0];
-    
-    
-	self.window.rootViewController = self.navController;
+
+    self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 

@@ -10,6 +10,6 @@
 
 @interface AVPhotoController : UIScrollView
 
-- (void) loadImagePaths:(NSArray*)paths;
+- (void) loadPhotos:(NSArray*)photos;
 
 @end

@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class AVPhoto;
+
 
 /**
 * AV Photo View
@@ -18,18 +20,11 @@
 @interface AVPhotoView : UIScrollView
 
 /**
-* Path to image
+* AV Photo
 *
-* Either web or file path
+* Object holding photo info
 */
-@property (nonatomic, copy) NSString *imagePath;
-
-/**
-* Caption
-*
-* A caption for the image
-*/
-@property (nonatomic, copy) NSString *caption;
+@property (nonatomic, strong) AVPhoto *photo;
 
 /**
 * Load image

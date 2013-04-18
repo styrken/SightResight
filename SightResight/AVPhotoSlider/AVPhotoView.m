@@ -7,8 +7,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import <CoreGraphics/CoreGraphics.h>
 #import "AVPhotoView.h"
+#import "AVPhoto.h"
 
 @interface AVPhotoView () <UIScrollViewDelegate>
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
@@ -29,8 +29,8 @@
     {
         self.isLoaded = NO;
         self.isAborted = NO;
-        self.caption = nil;
         self.imageView = nil;
+        self.photo = nil;
         self.delegate = self;
 
         // Spinner
@@ -51,12 +51,8 @@
         [self addGestureRecognizer:twoFingerTapRecognizer];
 
         // Add caption view
-
         self.captionView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-80, self.frame.size.width, 40)];
         [self.captionView setBackgroundColor:[UIColor blackColor]];
-
-        NSLog(@"Caption frext: %@", NSStringFromCGRect(self.captionView.frame));
-        NSLog(@"Own frame: %@", NSStringFromCGRect(self.frame));
 
         self.captionView.layer.opacity = 0.8;
 
@@ -84,12 +80,14 @@
         self.isLoaded = YES;
         [self.spinner startAnimating];
 
-        if(self.imagePath.length > 0)
+        NSLog(@"Photo: %@", self.photo);
+
+        if(self.photo.imagePath.length > 0)
         {
-            NSURL *url = [NSURL URLWithString:self.imagePath];
+            NSURL *url = [NSURL URLWithString:self.photo.imagePath];
             if ([[url scheme] isEqualToString:@"file"] || [url scheme] == NULL)
             {
-				UIImage *image = [UIImage imageNamed:self.imagePath];
+				UIImage *image = [UIImage imageNamed:self.photo.imagePath];
 
 				if(image)
 					[self setImage:image];
@@ -103,7 +101,7 @@
                 [assetslibrary assetForURL:url
                                resultBlock:^(ALAsset *asset){
                                    ALAssetRepresentation *rep = [asset defaultRepresentation];
-                                   self.caption = rep.filename;
+
                                    CGImageRef iref = [rep fullScreenImage];
                                    if (iref)
                                    {
@@ -155,7 +153,7 @@
     }
 
     [self.spinner stopAnimating];
-    [self.captionLabel setText:self.caption];
+    [self.captionLabel setText:self.photo.caption];
 
     self.imageView = [[UIImageView alloc] initWithImage:image];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -223,6 +221,9 @@
 
 - (void)scrollViewDoubleTapped:(UITapGestureRecognizer*)recognizer
 {
+    if(self.photo.zoomDiasbled)
+        return;
+
     CGPoint pointInView = [recognizer locationInView:self.imageView];
 
     CGFloat newZoomScale = self.zoomScale * 1.5f;
@@ -242,6 +243,9 @@
 
 - (void)scrollViewTwoFingerTapped:(UITapGestureRecognizer*)recognizer
 {
+    if(self.photo.zoomDiasbled)
+        return;
+
     CGFloat newZoomScale = self.zoomScale / 1.5f;
     newZoomScale = MAX(newZoomScale, self.minimumZoomScale);
     [self setZoomScale:newZoomScale animated:YES];
@@ -251,6 +255,9 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
+    if(self.photo.zoomDiasbled)
+        return nil;
+
     return self.imageView;
 }
 
