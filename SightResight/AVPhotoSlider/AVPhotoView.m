@@ -7,6 +7,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import "AVPhotoView.h"
 #import "AVPhoto.h"
 
@@ -173,6 +174,15 @@
     //[self addSubview:self.imageView];
     [self insertSubview:self.imageView belowSubview:self.captionView];
 
+    if(self.photo.draggingEnabled)
+    {
+        self.imageView.userInteractionEnabled = YES;
+
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragImage:)];
+        pan.minimumNumberOfTouches = 1;
+        pan.maximumNumberOfTouches = 1;
+        [self.imageView addGestureRecognizer:pan];
+    }
     [self calculateScaling];
     [self centerScrollViewContents];
 }
@@ -186,13 +196,17 @@
     CGFloat scaleHeight = scrollViewFrame.size.height / self.contentSize.height;
     CGFloat minScale = MIN(scaleWidth, scaleHeight);
 
-    self.minimumZoomScale = minScale;
+    if(self.photo.draggingEnabled)
+        self.minimumZoomScale = 0.2;
+    else
+        self.minimumZoomScale = minScale;
+
     self.maximumZoomScale = 1.0f;
     self.zoomScale = minScale;
 }
 
 - (void) centerScrollViewContents
-{
+{;
     CGSize boundsSize = self.bounds.size;
     CGRect contentsFrame = self.imageView.frame;
 
@@ -283,6 +297,17 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self fixCaptionView];
+}
+
+#pragma mark - Dragging of image
+
+- (void) dragImage:(UIPanGestureRecognizer *)pan
+{
+    if ((pan.state == UIGestureRecognizerStateChanged) || (pan.state == UIGestureRecognizerStateEnded))
+    {
+        CGPoint location = [pan locationInView:[self.imageView superview]];
+        [self.imageView setCenter:location];
+    }
 }
 
 @end

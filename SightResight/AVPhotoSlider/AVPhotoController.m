@@ -10,7 +10,6 @@
 #import "AVPhoto.h"
 
 @interface AVPhotoController () <UIScrollViewDelegate>
-@property (nonatomic, strong) NSArray *photos;
 @property (nonatomic, strong) NSMutableArray *photoViews;
 @end
 
@@ -43,6 +42,7 @@
 
 - (void) setupScrollView:(int)page
 {
+    // Safety guard if called from setFrame to early
     if(self.photos.count == 0)
         return;
 
@@ -85,8 +85,13 @@
     int currentPage = floor((self.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
 
     [super setFrame:frame];
+
+    // Bit hacky to setup the view again but it works better than the old code below
+    // trying to set frames on all views etc. There is a lot of views to take care of.
     [self setupScrollView:currentPage];
+
     /*
+    Old code
     __block CGRect photoFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     CGFloat photoWith = photoFrame.size.width;
     [self.photoViews enumerateObjectsUsingBlock:^(AVPhotoView * obj, NSUInteger idx, BOOL *stop) {

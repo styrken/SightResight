@@ -64,7 +64,7 @@ typedef int ScreenViewType;
     [self.opacitySlider addTarget:self action:@selector(setOpacity:) forControlEvents:UIControlEventValueChanged];
     [self.navigationController.toolbar addSubview:self.opacitySlider];
 
-    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Side by side", @"Gallery", @"Overlay", nil]];
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:NSLocalizedString(@"Side by side", @"Side by side title"), NSLocalizedString(@"Gallery", @"Gallery title"), NSLocalizedString(@"Overlay", @"Overlay title"), nil]];
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     segmentedControl.selectedSegmentIndex = 0;
     [segmentedControl addTarget:self action:@selector(changeView:) forControlEvents:UIControlEventValueChanged];
@@ -82,11 +82,19 @@ typedef int ScreenViewType;
 
 - (void) setScreenView:(ScreenViewType)screenView
 {
+    // Disable 'drag' mode that might have been put to YES in AlphaView
+    [self.photoController1.photos enumerateObjectsUsingBlock:^(AVPhoto *obj, NSUInteger idx, BOOL *stop) {
+        [obj setDraggingEnabled:NO];
+    }];
+
+    [self.photoController2.photos enumerateObjectsUsingBlock:^(AVPhoto *obj, NSUInteger idx, BOOL *stop) {
+        [obj setDraggingEnabled:NO];
+    }];
+
     switch (screenView)
     {
         case ScreenViewVertical:
         {
-            NSLog(@"Side by side");
             self.navigationController.toolbarHidden = YES;
 
             CGFloat halfWidth = self.view.frame.size.width / 2;
@@ -103,7 +111,6 @@ typedef int ScreenViewType;
         }
         case ScreenViewSingle:
         {
-            NSLog(@"Gallery mode");
             self.navigationController.toolbarHidden = YES;
 
             CGRect fullSize = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -113,12 +120,19 @@ typedef int ScreenViewType;
             self.photoController1.hidden = YES;
             self.photoController2.hidden = NO;
 
-
             break;
         }
         case ScreenViewAlpha:
         {
-            NSLog(@"Alpha mode");
+            // Enable 'drag' mode
+            [self.photoController1.photos enumerateObjectsUsingBlock:^(AVPhoto *obj, NSUInteger idx, BOOL *stop) {
+                [obj setDraggingEnabled:YES];
+            }];
+
+            [self.photoController2.photos enumerateObjectsUsingBlock:^(AVPhoto *obj, NSUInteger idx, BOOL *stop) {
+                [obj setDraggingEnabled:YES];
+            }];
+
             self.navigationController.toolbarHidden = NO;
 
             CGRect fullSize = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -132,7 +146,6 @@ typedef int ScreenViewType;
             break;
         }
     }
-
 }
 
 - (void) changeView:(UISegmentedControl *)control
@@ -202,6 +215,10 @@ typedef int ScreenViewType;
     AVPhoto *photo = [[AVPhoto alloc] init];
     photo.imagePath = @"finalImage.png";
     photo.caption = @"End of gallery";
+
+    if(pos == IMAGE_PICKER_TAG_RIGHT)
+        photo.captionRightSide = YES;
+
     photo.zoomDiasbled = YES;
 
 	[photos addObject:photo];

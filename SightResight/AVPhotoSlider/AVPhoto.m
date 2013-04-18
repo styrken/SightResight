@@ -20,6 +20,7 @@
         self.caption = @"";
         self.imagePath = @"";
         self.captionRightSide = NO;
+        self.draggingEnabled = NO;
     }
 
     return self;

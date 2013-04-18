@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 
+/**
+* AV Photo
+*
+* A simple object holding information about the photo to show.
+*/
 @interface AVPhoto : NSObject
 
 /**
@@ -28,14 +33,26 @@
 /**
 * Zoom disabled
 *
-* If zoom should be disabled
+* If zoom should be disabled.
+*
+* Default: NO
 */
 @property (nonatomic, assign) BOOL zoomDiasbled;
 
 /*
  * Set to true if caption should be in the right side of the page
  *
+ * Default: NO
  */
 @property (nonatomic, assign) BOOL captionRightSide;
+
+/**
+* Dragging enabled
+*
+* Enables dragging of the image.
+*
+* Default: NO
+*/
+@property (nonatomic, assign) BOOL draggingEnabled;
 
 @end
