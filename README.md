@@ -15,4 +15,4 @@ Overlay view allows you to take two images, and put them on top of each other. A
 
 ### License
 
-To use any of this code you must buy the App in the AppStore. 
+To use any of this code you must buy the App in the AppStore. You are not allowed to submit this code to the app store under a different name.
