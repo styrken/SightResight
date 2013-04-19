@@ -20,3 +20,28 @@ Copyright 2013 Appværk / Appvaerk
 You are allowed to use this code for your own projects. If you like the code you should donate 1,99$ by buying the App in the AppStore. You are not allowed to submit this code to the app store under a different name.
 
 If you buy the App you are allowed to use the AVPhotoSlider library as a base for your own gallery functionality.
+
+## How to
+
+* Copy AVPhotoSlider folder to your project
+* Add AVPhotoController as a subview to your controller
+* Create an array of AVPhoto's
+* Call loadPhotos on your AVPhotoController instance
+* Enjoy
+
+```objective-c
+AVPhotoController *gallery = [[AVPhotoController alloc] initWithFrame:YourFrame];
+[self.view addSubview:gallery];
+
+NSMutableArray *photos = [[NSMutableArray alloc] init];
+
+AVPhoto *photo = [[AVPhoto alloc] init];
+photo.imagePath = @"image.png";
+photo.caption = @"Cool photo";
+
+[photos addObject:photo];
+
+
+[gallery loadPhotos:photos];
+
+```
