@@ -40,8 +40,6 @@ photo.imagePath = @"image.png";
 photo.caption = @"Cool photo";
 
 [photos addObject:photo];
-
-
 [gallery loadPhotos:photos];
 
 ```
