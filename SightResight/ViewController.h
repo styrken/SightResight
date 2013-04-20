@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * Controller to hold the gallery sliders
+ * 
+ */
 @interface ViewController : UIViewController
 
 @end
