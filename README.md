@@ -1,7 +1,9 @@
 SightResight
 ============
 
-iOS Photoslider. Shows how to use UIScrollViews to create a gallery with zooming etc. This is the code for the app Sight Resight in App Store. All rights reserved.
+iOS Photoslider. Shows how simple it is to use UIScrollViews to create a gallery with zooming etc. This is the code for the app Sight Resight in App Store. All rights reserved.
+
+[View in app store](https://itunes.apple.com/us/app/sight-resight/id637379231?l=da&ls=1&mt=8)
 
 ### About Sight Resight
 
@@ -15,11 +17,13 @@ Overlay view allows you to take two images, and put them on top of each other. A
 
 ### License
 
-Copyright 2013 Appværk / Appvaerk
+Licensed under the Creative Commons 3.0 "BY SA" (http://creativecommons.org/licenses/by-sa/3.0/) license with the following addition:
 
-You are allowed to use this code for your own projects. If you like the code you should donate 1,99$ by buying the App in the AppStore. You are not allowed to submit this code to the app store under a different name.
+```
+You are not allowed to submit (aka copying the app) this code to the app store under a different name.
+```
 
-If you buy the App you are allowed to use the AVPhotoSlider library as a base for your own gallery functionality.
+If you like the code you should donate 1,99$ by buying the App in the AppStore. 
 
 ## How to
 
@@ -28,6 +32,8 @@ If you buy the App you are allowed to use the AVPhotoSlider library as a base fo
 * Create an array of AVPhoto's
 * Call loadPhotos on your AVPhotoController instance
 * Enjoy
+
+The code is built using ARC.
 
 ```objective-c
 AVPhotoController *gallery = [[AVPhotoController alloc] initWithFrame:YourFrame];
