@@ -3,6 +3,8 @@ SightResight
 
 iOS Photoslider. Shows how simple it is to use UIScrollViews to create a gallery with zooming etc. This is the code for the app Sight Resight in App Store. All rights reserved.
 
+(https://itunes.apple.com/us/app/sight-resight/id637379231?l=da&ls=1&mt=8)[View in app store]
+
 ### About Sight Resight
 
 For anyone working with sight-resight, mark-recapture or photo-id in general, this tool can help with matching animals while in the field. 
