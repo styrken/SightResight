@@ -31,6 +31,8 @@ If you like the code you should donate 1,99$ by buying the App in the AppStore.
 * Call loadPhotos on your AVPhotoController instance
 * Enjoy
 
+The code is built using ARC.
+
 ```objective-c
 AVPhotoController *gallery = [[AVPhotoController alloc] initWithFrame:YourFrame];
 [self.view addSubview:gallery];
