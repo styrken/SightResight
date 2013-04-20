@@ -18,9 +18,10 @@ Overlay view allows you to take two images, and put them on top of each other. A
 Licensed under the Creative Commons 3.0 "BY SA" (http://creativecommons.org/licenses/by-sa/3.0/) license with the following modifications:
 
 ```
-If you like the code you should donate 1,99$ by buying the App in the AppStore. You are not allowed to submit (aka copying the app) this code to the app store under a different name.
-If you buy the App you are allowed to use the AVPhotoSlider library as a base for your own gallery functionality (both private or commercial).
+* You are not allowed to submit (aka copying the app) this code to the app store under a different name.
 ```
+
+If you like the code you should donate 1,99$ by buying the App in the AppStore. 
 
 ## How to
 
