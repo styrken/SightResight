@@ -56,7 +56,7 @@
 
     // Create new frame for photos
     CGRect photoFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    CGFloat photoWith = photoFrame.size.width;
+    CGFloat photoWidth = photoFrame.size.width;
 
     for(AVPhoto *photo in self.photos)
     {
@@ -64,21 +64,23 @@
         AVPhotoView *photoview = [[AVPhotoView  alloc] initWithFrame:photoFrame photo:photo];
         [self addSubview:photoview];
 
-        // Save it for later user
+        // Save it for later use
         [self.photoViews addObject:photoview];
 
-        // Add with to origin for next image
-        photoFrame.origin.x += photoWith;
+        // Add width to origin for next image
+        photoFrame.origin.x += photoWidth;
     }
 
     // Set the total contentsize
-    self.contentSize = CGSizeMake((photoWith * self.photoViews.count), photoFrame.size.height);
-	self.contentOffset = CGPointMake(page*photoWith, 0);
+    self.contentSize = CGSizeMake((photoWidth * self.photoViews.count), photoFrame.size.height);
+    self.contentOffset = CGPointMake(page*photoWidth, 0);
 
     // Bit hacky.. bit it will invoke showing of current page
     [self scrollViewDidEndDecelerating:self];
 }
 
+// I needed to override setFrame to handle changing of the frame on the fly correctly
+// Feel free to make this in a better way if you got time :-)
 - (void)setFrame:(CGRect)frame
 {
     CGFloat pageWidth = self.frame.size.width;
@@ -86,7 +88,7 @@
 
     [super setFrame:frame];
 
-    // Bit hacky to setup the view again but it works better than the old code below
+    // Bit hacky to setup the view again but it works better than the old code below,
     // trying to set frames on all views etc. There is a lot of views to take care of.
     [self setupScrollView:currentPage];
 
