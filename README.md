@@ -4,6 +4,7 @@ SightResight
 iOS Photoslider. Shows how simple it is to use UIScrollViews to create a gallery with zooming etc. This is the code for the app Sight Resight in App Store. All rights reserved.
 
 [View in app store](https://itunes.apple.com/us/app/sight-resight/id637379231?l=da&ls=1&mt=8)
+[Visit on Twitter](https://twitter.com/SightResight)
 
 ### About Sight Resight
 
