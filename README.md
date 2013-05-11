@@ -24,7 +24,7 @@ Licensed under the Creative Commons 3.0 "BY SA" (http://creativecommons.org/lice
 You are not allowed to submit (aka copying the app) this code to the app store under a different name.
 ```
 
-*If you like the code you should donate 1,99$ by buying the App in the AppStore.* 
+*If you like the code you should donate 3,99$ by buying the App in the AppStore.* 
 
 ## How to
 
